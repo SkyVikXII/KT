@@ -1,0 +1,123 @@
+header {
+	width:100%
+}
+.links-container{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.links-container>p{
+	margin:0px;
+	padding-left:max(3%,15px);
+    padding-right:max(3%,15px);
+    padding-top: min(1%,5px);
+    padding-top: min(1%,5px);
+}
+#sidebar-active{
+    display: none;
+}
+.close-sidebar-button{
+    display: none;
+}
+nav.flex{
+    padding-left: max(5%,25px);
+    padding-right: max(5%,25px);
+    padding-top: 25px;
+    padding-bottom: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(128, 128, 128, 0.685);
+    
+}
+.icons_group{
+    display: flex;
+    flex-direction: row;
+	
+}
+.icons_group>img{
+	padding: 10px;
+}
+.open-sidebar-button{
+	padding: 10px;
+}
+.navigation_head{
+    font-size: 3em;border-bottom: solid black; margin-top: 0px;margin-bottom: 0px;
+}
+.navigation_head_sub{
+    margin-top: 0px;margin-bottom: 0px;
+}
+nav.flex img{
+    width: 2em;
+    height: 2em;
+}
+div.logo{
+    display: flex;
+    flex-direction: column;
+	align-items:center;
+}
+nav div div img{
+    padding-left:5px;
+    padding-right:5px;
+}
+@media(max-width: 1100px){
+    nav.flex{
+		width:100%;
+        justify-content: space-between;
+		position: fixed;
+		background-color: rgba(128, 128, 128, 0.685);
+    }
+    .links-container{
+	padding-top:25px;
+      flex-direction: column;
+      align-items: center;
+	  justify-content:flex-start;
+  
+      position: fixed;
+      top: 0;
+      right: -100%;
+      z-index: 10;
+      width: 300px;
+  
+      background-color: rgba(128, 128, 128, 1);
+      box-shadow: -5px 0 5px rgba(0, 0, 0, 0.25);
+      transition: 0.45s ease-out;
+    }
+	.links-container>p{
+		padding-top:max(25px,1%);
+		padding-bottom:max(25px,1%);
+	}
+	div.logo{
+		width:100%;
+		display: flex;
+		align-items:center;
+	}
+	
+	.icons_group{
+		padding-right:5%;
+	}
+	.close-sidebar-button{
+      padding: 10px;
+      display: block;
+	  align-self: flex-end;
+    }
+    #sidebar-active:checked ~ .links-container{
+      left: 0;
+    }
+    #sidebar-active:checked ~ #overlay{
+      height: 100%;
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 100%;
+      z-index: 9;
+    }
+    .icons_group{
+        display:flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+  }
